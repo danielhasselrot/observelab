@@ -18,13 +18,11 @@
         },
 
         pushValue: function(value) {
-            if (this.listener === undefined) {
-
-            } else if (this.listener instanceof Array) {
+            if (this.listener instanceof Array) {
                 for (i = 0; i< this.listener.length; i++) {
                     this.listener[i](value);
                 }
-            } else {
+            } else if (this.listener) {
                 this.listener(value);
             }
         }
